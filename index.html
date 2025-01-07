@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Risk Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Heart Attack Risk Prediction</h1>
+        <form method="POST" action="/predict">
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="mb-3">
+                <label for="sex" class="form-label">Sex (1=Male, 0=Female)</label>
+                <input type="number" class="form-control" id="sex" name="sex" required>
+            </div>
+            <div class="mb-3">
+                <label for="cp" class="form-label">Chest Pain Type (cp)</label>
+                <input type="number" class="form-control" id="cp" name="cp" required>
+            </div>
+            <div class="mb-3">
+                <label for="trtbps" class="form-label">Resting Blood Pressure (trtbps)</label>
+                <input type="number" class="form-control" id="trtbps" name="trtbps" required>
+            </div>
+            <div class="mb-3">
+                <label for="chol" class="form-label">Cholesterol (chol)</label>
+                <input type="number" class="form-control" id="chol" name="chol" required>
+            </div>
+            <div class="mb-3">
+                <label for="fbs" class="form-label">Fasting Blood Sugar (fbs)</label>
+                <input type="number" class="form-control" id="fbs" name="fbs" required>
+            </div>
+            <div class="mb-3">
+                <label for="restecg" class="form-label">Resting Electrocardiographic Results (restecg)</label>
+                <input type="number" class="form-control" id="restecg" name="restecg" required>
+            </div>
+            <div class="mb-3">
+                <label for="thalachh" class="form-label">Maximum Heart Rate Achieved (thalachh)</label>
+                <input type="number" class="form-control" id="thalachh" name="thalachh" required>
+            </div>
+            <div class="mb-3">
+                <label for="exng" class="form-label">Exercise Induced Angina (exng)</label>
+                <input type="number" class="form-control" id="exng" name="exng" required>
+            </div>
+            <div class="mb-3">
+                <label for="oldpeak" class="form-label">Oldpeak (oldpeak)</label>
+                <input type="number" class="form-control" id="oldpeak" name="oldpeak" required>
+            </div>
+            <div class="mb-3">
+                <label for="slp" class="form-label">Slope of the Peak Exercise ST Segment (slp)</label>
+                <input type="number" class="form-control" id="slp" name="slp" required>
+            </div>
+            <div class="mb-3">
+                <label for="caa" class="form-label">Number of Major Vessels Colored by Fluoroscopy (caa)</label>
+                <input type="number" class="form-control" id="caa" name="caa" required>
+            </div>
+            <div class="mb-3">
+                <label for="thal" class="form-label">Thalassemia (thal)</label>
+                <input type="number" class="form-control" id="thal" name="thal" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script> <!-- Link to JS file -->
+</body>
+</html>
